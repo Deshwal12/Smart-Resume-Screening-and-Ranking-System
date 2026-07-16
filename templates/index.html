@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screening & Candidate Ranking System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Resume Screening & Candidate Ranking System</h1>
+
+    <p>Welcome to our Resume Screening Project.</p>
+
+    <hr>
+
+    <h2>Upload Resume</h2>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+
+        <label><b>Select Resume(s) (PDF)</b></label><br>
+        <input type="file" name="resume" accept=".pdf" multiple required>
+
+        <br><br>
+
+        <label><b>Job Description</b></label><br>
+
+        <textarea
+            name="job_description"
+            rows="8"
+            cols="70"
+            placeholder="Enter Job Description here..."
+            required></textarea>
+
+        <br><br>
+
+        <input type="submit" value="Upload Resume">
+
+    </form>
+
+    {% if results %}
+
+    <hr>
+
+    <h2>Project Statistics</h2>
+
+    <p><strong>Total Resumes Uploaded:</strong> {{ total_resumes }}</p>
+
+    <p><strong>Highest Score:</strong> {{ highest_score }}%</p>
+
+    <p><strong>Average Score:</strong> {{ average_score }}%</p>
+
+    <hr>
+
+    <h2>Candidate Ranking</h2>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+
+        <tr>
+            <th>Rank</th>
+            <th>Resume Name</th>
+            <th>Match Score</th>
+            <th>Matched Skills</th>
+        </tr>
+
+        {% for result in results %}
+
+        <tr>
+
+            <td>{{ loop.index }}</td>
+
+            <td>{{ result.filename }}</td>
+
+            <td>{{ result.score }}%</td>
+
+            <td>
+
+                {% if result.skills %}
+
+                    {{ result.skills | join(', ') }}
+
+                {% else %}
+
+                    No Match
+
+                {% endif %}
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br>
+
+    <a href="/download">
+        <button type="button">Download Results as CSV</button>
+    </a>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
