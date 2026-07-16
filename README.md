@@ -59,7 +59,7 @@ AI-Resume-Screening/
 
 ### Home Page
 
-)
+![Home Page](Screenshots/home_page.png)
 
 ### Candidate Ranking
 ![Candidate Ranking](Screenshots/candidate_ranking.png)
