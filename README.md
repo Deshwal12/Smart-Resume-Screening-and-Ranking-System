@@ -65,7 +65,7 @@ AI-Resume-Screening/
 ![Candidate Ranking](Screenshots/candidate_ranking.png)
 
 ### CSV Results
-![CSV Results](screenshots/csv_result.png)
+![CSV Results](Screenshots/csv_result.png)
 
 ## How to Run
 
