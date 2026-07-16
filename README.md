@@ -58,11 +58,11 @@ AI-Resume-Screening/
 ## Screenshots
 
 ### Home Page
-![Home Page](<img width="925" height="422" alt="Home Page" src="https://github.com/user-attachments/assets/2736ed5c-e394-4a29-91f7-5b4678a49eaf" />
+
 )
 
 ### Candidate Ranking
-![Candidate Ranking](screenshots/candidate_ranking.png)
+![Candidate Ranking](Screenshots/candidate_ranking.png)
 
 ### CSV Results
 ![CSV Results](screenshots/csv_result.png)
